@@ -16,7 +16,28 @@ Notifications appear in Warp's notification center and as system notifications, 
 
 ## Installation
 
-### From npm (recommended)
+### OpenCode 2
+
+This fork adds OpenCode 2 support. Install it from GitHub:
+
+```bash
+opencode plugin add github:hIMEI29A/opencode-warp#v2-support
+```
+
+Or add it to `opencode.json` manually:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugins": ["github:hIMEI29A/opencode-warp#v2-support"]
+}
+```
+
+OpenCode 2 loads the package's `./tui` entrypoint next to the main plugin, so notifications
+run in the CLI process attached to your Warp pane. If the CLI is connected to a remote
+server, also add the same entry to `plugins` in `~/.config/opencode/cli.json`.
+
+### Upstream npm package (OpenCode 1 only)
 
 Add the plugin to your `opencode.json`:
 
@@ -45,9 +66,8 @@ server, add the package to `plugins` in your local `~/.config/opencode/cli.json`
 
 ### OpenCode V1
 
-The V2-compatible update is planned for `0.2.0`, with a new default entrypoint.
-OpenCode 1.18.29 and newer can use that release with the V1 `plugin` configuration key.
-Older V1 releases must keep the existing npm release pinned to
+The 0.2.0 default entrypoint is V2; OpenCode 1.18.29 and newer can use it with the V1 `plugin`
+configuration key. Older V1 releases must keep the existing npm release pinned to
 `"@warp-dot-dev/opencode-warp@0.1.7"`, or load the legacy entrypoint from a local build:
 
 ```json

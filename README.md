@@ -113,7 +113,7 @@ bun run typecheck
 bun test
 
 # Build
-bun run build
+bun run compile
 ```
 
 ## Uninstall

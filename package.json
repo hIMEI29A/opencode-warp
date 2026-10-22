@@ -1,7 +1,7 @@
 {
   "name": "@warp-dot-dev/opencode-warp",
   "version": "0.2.0",
-  "description": "Warp terminal integration for OpenCode — native notifications and more",
+  "description": "Warp terminal integration for OpenCode \u2014 native notifications and more",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -30,11 +30,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc",
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "dev": "tsc && node -e 'console.log(JSON.stringify({plugins: [process.cwd() + \"/dist\"]}, null, 2))'",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run compile",
+    "compile": "rm -rf dist && tsc"
   },
   "keywords": [
     "opencode",
